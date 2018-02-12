@@ -8,6 +8,9 @@ exports.example = () => {
 };
 
 exports.stripPrivateProperties = (bannedProperties = [], entries = []) => {
+  if (!bannedProperties || bannedProperties.length < 1) {
+    return entries;
+  }
   return entries.map(entry => {
     bannedProperties.forEach(bannedProperty => delete entry[bannedProperty]);
     return entry;
@@ -15,6 +18,9 @@ exports.stripPrivateProperties = (bannedProperties = [], entries = []) => {
 };
 
 exports.excludeByProperty = (propertyToExclude, entries = []) => {
+  if (!propertyToExclude) {
+    return entries;
+  }
   return entries
     .filter(entry => {
       const propertyNames = new Set(Object.keys(entry));
@@ -34,27 +40,32 @@ exports.sumDeep = (entries = []) => {
   }));
 };
 
+/**
+ * Verify that statusToColourMapping contains an entry for the specified status
+ * @param statusToColourMapping
+ * @param status {number} e.g. 418
+ * @returns {boolean} true if status maps to a colour value
+ */
 const statusHasColourMapping = (statusToColourMapping = {}, status) => {
   return !!statusToColourMapping[status];
 };
 
 exports.applyStatusColor = (colourStatusMapping = {}, statuses = []) => {
-  const mappings = {};
+  const statusToColourMapping = {};
   for (const colour of Object.keys(colourStatusMapping)) {
     colourStatusMapping[colour]
-      .forEach(statusCode => mappings[statusCode] = colour)
+      .forEach(statusCode => statusToColourMapping[statusCode] = colour)
   }
   return statuses
-    .filter(statusEntry => statusHasColourMapping(mappings, statusEntry.status))
+    .filter(statusEntry => statusHasColourMapping(statusToColourMapping, statusEntry.status))
     .map(statusEntry => Object.assign(statusEntry, {
-      color: mappings[statusEntry.status]
+      color: statusToColourMapping[statusEntry.status]
     }));
 };
 
 exports.createGreeting = (greeter, greeting) => {
   return (personsName) => greeter(greeting, personsName);
 };
-
 
 exports.setDefaults = (defaultProperties = {}) => {
   return (objectToApplyDefaults = {}) => {
@@ -80,7 +91,7 @@ const buildFullAddress = (user) => {
 };
 
 /**
- * API represents months starting at 0, so we will increment by 1
+ * User API represents months starting at 0, so we will increment by 1
  * @param user
  * @returns {number}
  */

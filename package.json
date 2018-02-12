@@ -1,0 +1,97 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@console/assessment-js",
+        "scope": "@console",
+        "escapedName": "@console%2fassessment-js",
+        "name": "@console/assessment-js",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/reecefenwick/Dev/console"
+    ]
+  ],
+  "_from": "@console/assessment-js@latest",
+  "_id": "@console/assessment-js@1.0.1",
+  "_inCache": true,
+  "_location": "/@console/assessment-js",
+  "_nodeVersion": "6.12.3",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/assessment-js-1.0.1.tgz_1517262234004_0.854414758970961"
+  },
+  "_npmUser": {
+    "name": "davidtsuji",
+    "email": "david@flodge.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@console/assessment-js",
+    "scope": "@console",
+    "escapedName": "@console%2fassessment-js",
+    "name": "@console/assessment-js",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/@console/assessment-js/-/assessment-js-1.0.1.tgz",
+  "_shasum": "8975444ffc04b112cb8a4c3b5af0d80d0923cd30",
+  "_shrinkwrap": null,
+  "_spec": "@console/assessment-js",
+  "_where": "/Users/reecefenwick/Dev/console",
+  "author": {
+    "name": "Console Connect"
+  },
+  "dependencies": {
+    "jest": "^22.0.4"
+  },
+  "description": "JS Assessment",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "8975444ffc04b112cb8a4c3b5af0d80d0923cd30",
+    "tarball": "https://registry.npmjs.org/@console/assessment-js/-/assessment-js-1.0.1.tgz"
+  },
+  "engines": {
+    "node": "^8.4.0"
+  },
+  "gitHead": "faafbbd3e8259e90a1bba51008fc66470b71f1c9",
+  "license": "UNLICENSED",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "davidtsuji",
+      "email": "david@flodge.com"
+    }
+  ],
+  "name": "@console/assessment-js",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "scripts": {
+    "test": "jest",
+    "test/watch": "jest --watchAll"
+  },
+  "version": "1.0.1",
+  "warnings": [
+    {
+      "code": "ENOTSUP",
+      "required": {
+        "node": "^8.4.0"
+      },
+      "pkgid": "@console/assessment-js@1.0.1"
+    },
+    {
+      "code": "ENOTSUP",
+      "required": {
+        "node": "^8.4.0"
+      },
+      "pkgid": "@console/assessment-js@1.0.1"
+    }
+  ]
+}
